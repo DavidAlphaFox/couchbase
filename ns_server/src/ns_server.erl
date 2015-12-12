@@ -30,7 +30,7 @@ log_pending() ->
             ?LOG(LogLevel, Fmt, Args),
             log_pending()
     end.
-
+%% 启动ns_server
 start(_Type, _Args) ->
     setup_env(),
     setup_static_config(),
