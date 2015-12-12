@@ -1,0 +1,12 @@
+{application, ale,
+ [
+  {description, "Another Logger for Erlang"},
+  {vsn, "@ALE_VERSION@"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { ale_app, []}},
+  {env, []}
+ ]}.

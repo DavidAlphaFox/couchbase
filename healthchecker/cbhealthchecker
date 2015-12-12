@@ -1,0 +1,137 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import getopt
+import sys
+import os
+import traceback
+import copy
+import logging
+import time
+
+import collector
+import analyzer
+import stats_buffer
+import util_cli as util
+import node_map
+
+log = logging.getLogger('cbhealthchecker')
+log.setLevel(logging.INFO)
+log.addHandler(logging.StreamHandler())
+
+def parse_opt():
+    (bucket, cluster, user, password, verbose, debug,
+     inputfile, scale, statsonly) = ('all', '', '', '', True, True, '', 'all', False)
+
+    try:
+        (opts, _args) = getopt.getopt(sys.argv[1:], 
+                                      'b:c:h?p:u:i:s:j', [
+                'bucket=',
+                'cluster=',
+                'help',
+                'password=',
+                'user=',
+                'html=',
+                'input=',
+                'scale=',
+                'json',
+                ])
+    except getopt.GetoptError, err:
+        usage(err)
+
+    for (opt, arg) in opts:
+        if opt in ('-h', '-?', '--help'):
+            usage()
+            sys.exit(0)
+        if opt in ('-b', '--bucket'):
+            bucket = arg
+        if opt in ('-c', '--cluster'):
+            cluster = arg
+        if opt in ('-u', '--user'):
+            user = arg
+        if opt in ('-p', '--password'):
+            password = arg
+        if opt in ('-i', '--input'):
+            inputfile = arg
+        if opt in ('-s', '--scale'):
+            if arg not in ('minute', 'hour', 'day', 'week', 'month', 'year', 'all'):
+                print "ERROR: Wrong scale unit:" + arg
+                usage()
+                exit(1)
+            else:
+                scale = arg
+        if opt in ('-j', '--json'):
+            statsonly = True
+
+    if not cluster and not inputfile: 
+        usage()
+    return (bucket, cluster, user, password, verbose, debug, inputfile, scale, statsonly, opts)
+
+def usage(error_msg=''):
+    if error_msg:
+        print "ERROR: %s" % error_msg
+        sys.exit(2)
+
+    print """cbhealthchecker - cluster key performance indicator stats
+
+usage: cbhealthchecker CLUSTER USERNAME PASSWORD OPTIONS
+
+CLUSTER:
+  --cluster=HOST[:PORT] or -c HOST[:PORT] Default port is 8091
+USERNAME:
+
+  -u USERNAME, --user=USERNAME       admin username of the cluster
+PASSWORD:
+  -p PASSWORD, --password=PASSWORD   admin password of the cluster
+OPTIONS:
+  -b BUCKETNAME, --bucket=BUCKETNAME Specific bucket name. Default is all buckets
+  -i FILENAME, --input=FILENAME      Construct report out of input JSON file
+  -o FILENAME, --output=FILENAME     Default output filename is 'health_report.html'
+  -h --help                          Show this help message and exit
+  -s SCALE, --scale=SCALE            Specify stats scale, i.e. minute, hour, day, week, month and year
+                                     Default scale is to collect all scale data
+  -j --jsononly                      Colllect data only but no analysis report generated
+"""
+    sys.exit(2)
+
+def mk_outputdir(output_dir):
+    path = os.path.join(os.getcwd(), 'reports', output_dir)
+    if not os.path.exists(path):
+        try:
+            os.makedirs(path)
+        except:
+            return "Cannot create upper directories for file:%s\n" % path, None
+    return 0, path
+
+def main():
+    time_file_name = time.strftime('%Y-%m-%d_%H-%M-%S')
+
+    (bucket, cluster, user, password, verbose, debug, inputfile, scale, statsonly, opts) = parse_opt()
+
+    rv, outputdir = mk_outputdir(time_file_name)
+    if rv:
+        sys.stderr.write(rv)
+        sys.exit(1)
+
+    stats_file = time_file_name + ".json"
+    #make snapshot for the current cluster status
+    retriever = collector.StatsCollector(log)
+    scale = retriever.collect_data(bucket, cluster, user, password, inputfile, stats_file, scale, opts, outputdir)
+    if statsonly:
+        sys.stderr.write("\nThe run finished successfully. Please find collected stats at '%s'.\n" % \
+            os.path.join(outputdir, stats_file))
+        sys.exit(0)
+    else:
+        #analyze the snapshot and historic data
+        performer = analyzer.StatsAnalyzer(log)
+
+        if scale == 'all':
+            scale_set = stats_buffer.stats.keys()
+        else:
+            scale_set = [scale]
+        for scale_val in scale_set:
+            performer.run_analysis(scale_val)
+            performer.run_report(verbose, scale_set, scale_val, debug, outputdir)
+
+if __name__ == '__main__':
+    main()

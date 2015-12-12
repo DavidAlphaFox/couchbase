@@ -1,0 +1,488 @@
+{
+    "params": {
+        "allow_data_loss_during_shutdown": {
+            "default": "false",
+            "dynamic": false,
+            "type": "bool"
+        },
+        "alog_block_size": {
+            "default": "4096",
+            "descr": "Logging block size.",
+            "dynamic": false,
+            "type": "size_t"
+        },
+        "alog_path": {
+            "default": "",
+            "descr": "Path to the access log.",
+            "dynamic": false,
+            "type": "std::string"
+        },
+        "access_scanner_enabled": {
+            "default": "true",
+            "descr": "True if access scanner task is enabled",
+            "type": "bool"
+        },
+        "alog_sleep_time": {
+            "default": "1440",
+            "descr": "Number of minutes between each sweep for the access log",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 4320,
+                    "min": 1
+                }
+            }
+        },
+        "alog_task_time": {
+            "default": "10",
+            "descr": "Hour in GMT time when access scanner task is scheduled to run",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 23,
+                    "min": 0
+                }
+            }
+        },
+        "backend": {
+            "default": "couchdb",
+            "dynamic": false,
+            "type": "std::string",
+            "validator": {
+                "enum": [
+                    "couchdb"
+                ]
+            }
+        },
+        "backfill_mem_threshold": {
+            "default": "96",
+            "desr": "Percentage of memory that backfill task is allowed to consume",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        },
+        "bg_fetch_delay": {
+            "default": "0",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 900,
+                    "min": 0
+                }
+            }
+        },
+        "compaction_exp_mem_threshold": {
+            "default": "85",
+            "desr": "Memory usage threshold after which compaction will not queue expired items for deletion",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        },
+        "chk_max_items": {
+            "default": "500",
+            "type": "size_t"
+        },
+        "chk_period": {
+            "default": "5",
+            "type": "size_t"
+        },
+        "chk_remover_stime": {
+            "default": "5",
+            "type": "size_t"
+        },
+        "compaction_write_queue_cap": {
+            "default": "10000",
+            "desr" : "Disk write queue threshold after which compaction tasks will be made to snooze, if there are already pending compaction tasks",
+            "type" : "size_t"
+        },
+        "config_file": {
+            "default": "",
+            "dynamic": false,
+            "type": "std::string"
+        },
+        "conflict_resolution_type": {
+            "default": "seqno",
+            "dynamic": false,
+            "type": "std::string",
+            "validator": {
+                "enum": [
+                    "seqno"
+                ]
+            }
+        },
+        "couch_bucket": {
+            "default": "default",
+            "dynamic": false,
+            "type": "std::string"
+        },
+        "data_traffic_enabled": {
+            "default": "true",
+            "descr": "True if we want to enable data traffic after warmup is complete",
+            "type": "bool"
+        },
+        "dbname": {
+            "default": "/tmp/test",
+            "descr": "Path to on-disk storage.",
+            "dynamic": false,
+            "type": "std::string"
+        },
+        "enable_chk_merge": {
+            "default": "false",
+            "descr": "True if merging closed checkpoints is enabled",
+            "type": "bool"
+        },
+        "exp_pager_stime": {
+            "default": "3600",
+            "type": "size_t"
+        },
+        "failpartialwarmup": {
+            "default": "true",
+            "type": "bool"
+        },
+        "flushall_enabled": {
+            "default": "false",
+            "descr": "True if memcached flush API is enabled",
+            "type": "bool"
+        },
+        "getl_default_timeout": {
+            "default": "15",
+            "descr": "The default timeout for a getl lock in (s)",
+            "type": "size_t"
+        },
+        "getl_max_timeout": {
+            "default": "30",
+            "descr": "The maximum timeout for a getl lock in (s)",
+            "type": "size_t"
+        },
+        "ht_locks": {
+            "default": "47",
+            "type": "size_t"
+        },
+        "ht_size": {
+            "default": "0",
+            "type": "size_t"
+        },
+        "initfile": {
+            "default": "",
+            "type": "std::string"
+        },
+        "item_eviction_policy": {
+            "default": "value_only",
+            "descr": "Item eviction policy on cache, which is used by the item pager",
+            "type": "std::string",
+            "validator": {
+                "enum": [
+                    "value_only",
+                    "full_eviction"
+                ]
+            }
+        },
+        "item_num_based_new_chk": {
+            "default": "true",
+            "descr": "True if the number of items in the current checkpoint plays a role in a new checkpoint creation",
+            "type": "bool"
+        },
+        "keep_closed_chks": {
+            "default": "false",
+            "descr": "True if we want to keep the closed checkpoints for each vbucket unless the memory usage is above high water mark",
+            "type": "bool"
+        },
+        "max_checkpoints": {
+            "default": "2",
+            "type": "size_t"
+        },
+        "max_failover_entries": {
+            "default": "25",
+            "descr": "maximum number of failover log entries",
+            "type": "size_t"
+        },
+        "max_item_size": {
+            "default": "(20 * 1024 * 1024)",
+            "descr": "Maximum number of bytes allowed for an item",
+            "type": "size_t"
+        },
+        "max_size": {
+            "default": "0",
+            "type": "size_t"
+        },
+        "max_vbuckets": {
+            "default": "1024",
+            "descr": "Maximum number of vbuckets expected",
+            "dynamic": false,
+            "type": "size_t"
+        },
+        "max_threads": {
+            "default": "0",
+            "descr": "Maximum number of threads in global pool",
+            "dynamic": false,
+            "type": "size_t"
+        },
+        "max_num_shards": {
+            "default": "4",
+            "descr": "Maximum number of shards",
+            "dynamic": false,
+            "type": "size_t"
+        },
+        "max_num_workers": {
+            "default": "4",
+            "descr": "Bucket Priority relative to other buckets",
+            "dynamic": false,
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 8,
+                    "min": 1
+                }
+            }
+        },
+        "max_num_readers": {
+            "default": "0",
+            "descr": "Throttle max number of reader threads",
+            "dynamic": false,
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 512,
+                    "min": 0
+                }
+            }
+        },
+        "max_num_writers": {
+            "default": "0",
+            "descr": "Throttle max number of writer threads",
+            "dynamic": false,
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 512,
+                    "min": 0
+                }
+            }
+        },
+        "max_num_auxio": {
+            "default": "0",
+            "descr": "Throttle max number of aux io threads",
+            "dynamic": false,
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 512,
+                    "min": 0
+                }
+            }
+        },
+        "max_num_nonio": {
+            "default": "0",
+            "descr": "Throttle max number of non io threads",
+            "dynamic": false,
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 512,
+                    "min": 0
+                }
+            }
+        },
+        "mem_high_wat": {
+            "default": "max",
+            "type": "size_t"
+        },
+        "mem_low_wat": {
+            "default": "max",
+            "type": "size_t"
+        },
+        "mutation_mem_threshold": {
+            "default": "93",
+            "desr": "Percentage of memory that can be used before mutations return tmpOOMs",
+            "type": "size_t",
+            "validator" : {
+                "range" : {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        },
+        "pager_active_vb_pcnt": {
+            "default": "40",
+            "descr": "Active vbuckets paging percentage",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 50,
+                    "min": 0
+                }
+            }
+        },
+        "postInitfile": {
+            "default": "",
+            "type": "std::string"
+        },
+        "tap_ack_grace_period": {
+            "default": "300",
+            "type": "size_t"
+        },
+        "tap_ack_initial_sequence_number": {
+            "default": "1",
+            "type": "size_t"
+        },
+        "tap_ack_interval": {
+            "default": "1000",
+            "type": "size_t"
+        },
+        "tap_ack_window_size": {
+            "default": "10",
+            "type": "size_t"
+        },
+        "tap_backfill_resident": {
+            "default": "0.9",
+            "type": "float"
+        },
+        "tap_backlog_limit": {
+            "default": "5000",
+            "type": "size_t"
+        },
+        "tap_backoff_period": {
+            "default": "5.0",
+            "type": "float"
+        },
+        "tap_bg_max_pending": {
+            "default": "500",
+            "type": "size_t"
+        },
+        "tap_keepalive": {
+            "default": "0",
+            "type": "size_t"
+        },
+        "tap_noop_interval": {
+            "default": "200",
+            "descr": "Number of seconds between a noop is sent on an idle connection",
+            "type": "size_t"
+        },
+        "tap_requeue_sleep_time": {
+            "default": "0.1",
+            "type": "float"
+        },
+        "tap_throttle_cap_pcnt": {
+            "default": "10",
+            "descr": "Percentage of total items in write queue at which we throttle tap input",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        },
+        "tap_throttle_queue_cap": {
+            "default": "-1",
+            "descr": "Max size of a write queue to throttle incoming tap input.",
+            "type": "ssize_t",
+            "validator": {
+                "range": {
+                    "max": 100000000,
+                    "min": -1
+                }
+            }
+        },
+        "tap_throttle_threshold": {
+            "default": "99",
+            "descr": "Percentage of max mem at which we begin NAKing tap input.",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        },
+        "uuid": {
+            "default": "",
+            "descr": "The UUID for the bucket",
+            "dynamic" : false,
+            "type": "std::string"
+        },
+        "dcp_conn_buffer_size": {
+            "default": "10485760",
+            "descr": "Size in bytes of an dcp consumer connection buffer",
+            "dynamic": false,
+            "type": "size_t"
+        },
+        "dcp_enable_flow_control": {
+            "default": "true",
+            "descr": "Whether or not dcp connections should use flow control",
+            "dynamic": false,
+            "type": "bool"
+        },
+        "dcp_enable_noop": {
+            "default": "true",
+            "descr": "Whether or not dcp connections should use no-ops",
+            "dynamic": false,
+            "type": "bool"
+        },
+        "dcp_noop_interval": {
+            "default": "180",
+            "descr": "Number of seconds between a noop",
+            "type": "size_t"
+        },
+        "dcp_max_unacked_bytes": {
+            "default": "524288",
+            "descr": "Amount of processed bytes before an ack is required",
+            "dynamic": false,
+            "type": "size_t"
+        },
+        "vb0": {
+            "default": "false",
+            "type": "bool"
+        },
+        "waitforwarmup": {
+            "default": "false",
+            "type": "bool"
+        },
+        "warmup": {
+            "default": "true",
+            "type": "bool"
+        },
+        "warmup_batch_size": {
+            "default": "1000",
+            "descr": "The size of each batch loaded during warmup.",
+            "dynamic": false,
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 10000,
+                    "min": 1
+                }
+            }
+        },
+        "warmup_min_memory_threshold": {
+            "default": "100",
+            "descr": "Percentage of max mem warmed up before we enable traffic.",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        },
+        "warmup_min_items_threshold": {
+            "default": "100",
+            "descr": "Percentage of total items warmed up before we enable traffic.",
+            "type": "size_t",
+            "validator": {
+                "range": {
+                    "max": 100,
+                    "min": 0
+                }
+            }
+        }
+    }
+}

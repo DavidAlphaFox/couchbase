@@ -1,0 +1,1007 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		DA638E2513E1F7C9005E6A5B /* Couchbase Server Zip */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DA638E2913E1F7C9005E6A5B /* Build configuration list for PBXAggregateTarget "Couchbase Server Zip" */;
+			buildPhases = (
+				DA638E2813E1F7C9005E6A5B /* Zip it up */,
+				E867F93014A8CD0800F64EC8 /* Create a dmg */,
+			);
+			dependencies = (
+				DA638E2D13E1F810005E6A5B /* PBXTargetDependency */,
+			);
+			name = "Couchbase Server Zip";
+			productName = "Couchbase Server Zip";
+		};
+		DAE21573133DB9C2006D63D2 /* Couchbase Single Server Zip */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = DAE21576133DB9C3006D63D2 /* Build configuration list for PBXAggregateTarget "Couchbase Single Server Zip" */;
+			buildPhases = (
+				DAE2157A133DBA20006D63D2 /* Zip it up */,
+			);
+			dependencies = (
+				DAE21579133DB9C8006D63D2 /* PBXTargetDependency */,
+			);
+			name = "Couchbase Single Server Zip";
+			productName = "Couchbase Server Zip";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0F18A8731936BB3800585D2A /* Importer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F18A8721936BB3800585D2A /* Importer.xib */; };
+		0F18A8741936BB3800585D2A /* Importer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F18A8721936BB3800585D2A /* Importer.xib */; };
+		2725AADE158A46E800CCC0B9 /* ToolInstallController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2725AADC158A46E800CCC0B9 /* ToolInstallController.m */; };
+		2725AADF158A46E800CCC0B9 /* ToolInstallController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2725AADD158A46E800CCC0B9 /* ToolInstallController.xib */; };
+		2725AAE8158A84BD00CCC0B9 /* PrivilegedInstall.m in Sources */ = {isa = PBXBuildFile; fileRef = 2725AAE7158A84BC00CCC0B9 /* PrivilegedInstall.m */; };
+		2725AAEF158A93CF00CCC0B9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2725AAEE158A93CF00CCC0B9 /* Security.framework */; };
+		DA0E692413DD364400CDAC6D /* dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = DA0E692013DD364400CDAC6D /* dictionary.c */; };
+		DA0E692513DD364400CDAC6D /* iniparser.c in Sources */ = {isa = PBXBuildFile; fileRef = DA0E692213DD364400CDAC6D /* iniparser.c */; };
+		DA1AD338133DA58D00E6A9E1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1AD337133DA58D00E6A9E1 /* Cocoa.framework */; };
+		DA1AD342133DA58D00E6A9E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1AD340133DA58D00E6A9E1 /* InfoPlist.strings */; };
+		DA1AD345133DA58D00E6A9E1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1AD344133DA58D00E6A9E1 /* main.m */; };
+		DA1AD34B133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1AD34A133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.m */; };
+		DA1AD355133DA58D00E6A9E1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1AD337133DA58D00E6A9E1 /* Cocoa.framework */; };
+		DA1AD35D133DA58D00E6A9E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1AD35B133DA58D00E6A9E1 /* InfoPlist.strings */; };
+		DA1AD360133DA58D00E6A9E1 /* Couchbase_ServerTests.h in Resources */ = {isa = PBXBuildFile; fileRef = DA1AD35F133DA58D00E6A9E1 /* Couchbase_ServerTests.h */; };
+		DA1AD362133DA58D00E6A9E1 /* Couchbase_ServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1AD361133DA58D00E6A9E1 /* Couchbase_ServerTests.m */; };
+		DA3C66FA136BA741007C835A /* couchx.ini in Enable Native Query Server */ = {isa = PBXBuildFile; fileRef = DA3C66F7136BA6BC007C835A /* couchx.ini */; };
+		DA45A4391384EF0300DF68ED /* Couchbase-Status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA45A4381384EF0300DF68ED /* Couchbase-Status-bw.png */; };
+		DA638DF813E1F7BA005E6A5B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1AD344133DA58D00E6A9E1 /* main.m */; };
+		DA638DF913E1F7BA005E6A5B /* Couchbase_ServerAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA1AD34A133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.m */; };
+		DA638DFA13E1F7BA005E6A5B /* LoginItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADFB0C133DA68B00B282D6 /* LoginItemManager.m */; };
+		DA638DFB13E1F7BA005E6A5B /* ImportableDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADFB0E133DA68B00B282D6 /* ImportableDatabase.m */; };
+		DA638DFC13E1F7BA005E6A5B /* ImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADFB10133DA68B00B282D6 /* ImportController.m */; };
+		DA638DFE13E1F7BA005E6A5B /* dictionary.c in Sources */ = {isa = PBXBuildFile; fileRef = DA0E692013DD364400CDAC6D /* dictionary.c */; };
+		DA638DFF13E1F7BA005E6A5B /* iniparser.c in Sources */ = {isa = PBXBuildFile; fileRef = DA0E692213DD364400CDAC6D /* iniparser.c */; };
+		DA638E0113E1F7BA005E6A5B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA1AD337133DA58D00E6A9E1 /* Cocoa.framework */; };
+		DA638E0213E1F7BA005E6A5B /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAADFB17133DA6CE00B282D6 /* Sparkle.framework */; };
+		DA638E0413E1F7BA005E6A5B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DA1AD340133DA58D00E6A9E1 /* InfoPlist.strings */; };
+		DA638E0613E1F7BA005E6A5B /* Couchbase-Status.png in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAF8133DA61700B282D6 /* Couchbase-Status.png */; };
+		DA638E0713E1F7BA005E6A5B /* Couchbase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAF9133DA61700B282D6 /* Couchbase.icns */; };
+		DA638E0813E1F7BA005E6A5B /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAFA133DA61700B282D6 /* Credits.html */; };
+		DA638E0913E1F7BA005E6A5B /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = DAAEC781133DBD0700EE9189 /* dsa_pub.pem */; };
+		DA638E0A13E1F7BA005E6A5B /* ensure_full_commit.sh in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAFB133DA61700B282D6 /* ensure_full_commit.sh */; };
+		DA638E0B13E1F7BA005E6A5B /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = DAADFB00133DA61700B282D6 /* MainMenu.nib */; };
+		DA638E0C13E1F7BA005E6A5B /* Couchbase-Status-bw.png in Resources */ = {isa = PBXBuildFile; fileRef = DA45A4381384EF0300DF68ED /* Couchbase-Status-bw.png */; };
+		DA638E0E13E1F7BA005E6A5B /* Sparkle.framework in Install Sparkle */ = {isa = PBXBuildFile; fileRef = DAADFB17133DA6CE00B282D6 /* Sparkle.framework */; };
+		DAADFB02133DA61700B282D6 /* Couchbase-Status.png in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAF8133DA61700B282D6 /* Couchbase-Status.png */; };
+		DAADFB03133DA61700B282D6 /* Couchbase.icns in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAF9133DA61700B282D6 /* Couchbase.icns */; };
+		DAADFB04133DA61700B282D6 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAFA133DA61700B282D6 /* Credits.html */; };
+		DAADFB05133DA61700B282D6 /* ensure_full_commit.sh in Resources */ = {isa = PBXBuildFile; fileRef = DAADFAFB133DA61700B282D6 /* ensure_full_commit.sh */; };
+		DAADFB0A133DA61700B282D6 /* MainMenu.nib in Resources */ = {isa = PBXBuildFile; fileRef = DAADFB00133DA61700B282D6 /* MainMenu.nib */; };
+		DAADFB13133DA68B00B282D6 /* LoginItemManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADFB0C133DA68B00B282D6 /* LoginItemManager.m */; };
+		DAADFB14133DA68B00B282D6 /* ImportableDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADFB0E133DA68B00B282D6 /* ImportableDatabase.m */; };
+		DAADFB15133DA68B00B282D6 /* ImportController.m in Sources */ = {isa = PBXBuildFile; fileRef = DAADFB10133DA68B00B282D6 /* ImportController.m */; };
+		DAADFB18133DA6CE00B282D6 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAADFB17133DA6CE00B282D6 /* Sparkle.framework */; };
+		DAADFB1B133DA71800B282D6 /* Sparkle.framework in Install Sparkle */ = {isa = PBXBuildFile; fileRef = DAADFB17133DA6CE00B282D6 /* Sparkle.framework */; };
+		DAADFB28133DA75F00B282D6 /* bin in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB1D133DA75F00B282D6 /* bin */; };
+		DAADFB29133DA75F00B282D6 /* env.sh in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB1E133DA75F00B282D6 /* env.sh */; };
+		DAADFB2A133DA75F00B282D6 /* etc in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB1F133DA75F00B282D6 /* etc */; };
+		DAADFB2B133DA75F00B282D6 /* include in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB20133DA75F00B282D6 /* include */; };
+		DAADFB2C133DA75F00B282D6 /* info in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB21133DA75F00B282D6 /* info */; };
+		DAADFB2D133DA75F00B282D6 /* lib in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB22133DA75F00B282D6 /* lib */; };
+		DAADFB2E133DA75F00B282D6 /* Library in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB23133DA75F00B282D6 /* Library */; };
+		DAADFB2F133DA75F00B282D6 /* man in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB24133DA75F00B282D6 /* man */; };
+		DAADFB30133DA75F00B282D6 /* sbin in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB25133DA75F00B282D6 /* sbin */; };
+		DAADFB31133DA75F00B282D6 /* share in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB26133DA75F00B282D6 /* share */; };
+		DAADFB32133DA75F00B282D6 /* var in Install Core */ = {isa = PBXBuildFile; fileRef = DAADFB27133DA75F00B282D6 /* var */; };
+		DAADFB3B133DA84E00B282D6 /* erl in Install Proper erl start thing */ = {isa = PBXBuildFile; fileRef = DAADFB37133DA84400B282D6 /* erl */; };
+		DAAEC783133DBD1E00EE9189 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = DAAEC781133DBD0700EE9189 /* dsa_pub.pem */; };
+		E802C02A14FEDCD100A54EC8 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = E802C02414FEDB9500A54EC8 /* LICENSE.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA1AD356133DA58D00E6A9E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA1AD32A133DA58D00E6A9E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA1AD332133DA58D00E6A9E1;
+			remoteInfo = "Couchbase Server";
+		};
+		DA638E2C13E1F810005E6A5B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA1AD32A133DA58D00E6A9E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA638DF613E1F7BA005E6A5B;
+			remoteInfo = "Couchbase Server";
+		};
+		DAE21578133DB9C8006D63D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA1AD32A133DA58D00E6A9E1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA1AD332133DA58D00E6A9E1;
+			remoteInfo = "Couchbase Server";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA3C66F9136BA714007C835A /* Enable Native Query Server */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "couchdbx-core/etc/couchdb/default.d";
+			dstSubfolderSpec = 7;
+			files = (
+				DA3C66FA136BA741007C835A /* couchx.ini in Enable Native Query Server */,
+			);
+			name = "Enable Native Query Server";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA638E0D13E1F7BA005E6A5B /* Install Sparkle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DA638E0E13E1F7BA005E6A5B /* Sparkle.framework in Install Sparkle */,
+			);
+			name = "Install Sparkle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAADFB1A133DA70E00B282D6 /* Install Sparkle */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DAADFB1B133DA71800B282D6 /* Sparkle.framework in Install Sparkle */,
+			);
+			name = "Install Sparkle";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAADFB1C133DA72C00B282D6 /* Install Core */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "couchdbx-core";
+			dstSubfolderSpec = 7;
+			files = (
+				DAADFB28133DA75F00B282D6 /* bin in Install Core */,
+				DAADFB29133DA75F00B282D6 /* env.sh in Install Core */,
+				DAADFB2A133DA75F00B282D6 /* etc in Install Core */,
+				DAADFB2B133DA75F00B282D6 /* include in Install Core */,
+				DAADFB2C133DA75F00B282D6 /* info in Install Core */,
+				DAADFB2D133DA75F00B282D6 /* lib in Install Core */,
+				DAADFB2E133DA75F00B282D6 /* Library in Install Core */,
+				DAADFB2F133DA75F00B282D6 /* man in Install Core */,
+				DAADFB30133DA75F00B282D6 /* sbin in Install Core */,
+				DAADFB31133DA75F00B282D6 /* share in Install Core */,
+				DAADFB32133DA75F00B282D6 /* var in Install Core */,
+			);
+			name = "Install Core";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DAADFB36133DA7E800B282D6 /* Install Proper erl start thing */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "couchdbx-core/bin";
+			dstSubfolderSpec = 7;
+			files = (
+				DAADFB3B133DA84E00B282D6 /* erl in Install Proper erl start thing */,
+			);
+			name = "Install Proper erl start thing";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0F18A8721936BB3800585D2A /* Importer.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Importer.xib; sourceTree = "<group>"; };
+		2725AADB158A46E800CCC0B9 /* ToolInstallController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolInstallController.h; sourceTree = "<group>"; };
+		2725AADC158A46E800CCC0B9 /* ToolInstallController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolInstallController.m; sourceTree = "<group>"; };
+		2725AADD158A46E800CCC0B9 /* ToolInstallController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToolInstallController.xib; sourceTree = "<group>"; };
+		2725AAE6158A84BC00CCC0B9 /* PrivilegedInstall.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivilegedInstall.h; sourceTree = "<group>"; };
+		2725AAE7158A84BC00CCC0B9 /* PrivilegedInstall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrivilegedInstall.m; sourceTree = "<group>"; };
+		2725AAEE158A93CF00CCC0B9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		27A22360155B2EEC0076D8BC /* install_libraries.rb */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = text.script.ruby; path = install_libraries.rb; sourceTree = "<group>"; };
+		27F00DEE15B5CFB8008CDA68 /* README_for_zip.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = README_for_zip.txt; path = makedmg/README_for_zip.txt; sourceTree = SOURCE_ROOT; };
+		DA0E692013DD364400CDAC6D /* dictionary.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dictionary.c; sourceTree = "<group>"; };
+		DA0E692113DD364400CDAC6D /* dictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dictionary.h; sourceTree = "<group>"; };
+		DA0E692213DD364400CDAC6D /* iniparser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = iniparser.c; sourceTree = "<group>"; };
+		DA0E692313DD364400CDAC6D /* iniparser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iniparser.h; sourceTree = "<group>"; };
+		DA1AD333133DA58D00E6A9E1 /* Couchbase Single Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couchbase Single Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1AD337133DA58D00E6A9E1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DA1AD33A133DA58D00E6A9E1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DA1AD33B133DA58D00E6A9E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DA1AD33C133DA58D00E6A9E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DA1AD33F133DA58D00E6A9E1 /* Couchbase Server-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Couchbase Server-Info.plist"; sourceTree = "<group>"; };
+		DA1AD341133DA58D00E6A9E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA1AD343133DA58D00E6A9E1 /* Couchbase Server-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Couchbase Server-Prefix.pch"; sourceTree = "<group>"; };
+		DA1AD344133DA58D00E6A9E1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA1AD349133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Couchbase_ServerAppDelegate.h; sourceTree = "<group>"; };
+		DA1AD34A133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Couchbase_ServerAppDelegate.m; sourceTree = "<group>"; };
+		DA1AD354133DA58D00E6A9E1 /* Couchbase ServerTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Couchbase ServerTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA1AD35A133DA58D00E6A9E1 /* Couchbase ServerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Couchbase ServerTests-Info.plist"; sourceTree = "<group>"; };
+		DA1AD35C133DA58D00E6A9E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DA1AD35E133DA58D00E6A9E1 /* Couchbase ServerTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Couchbase ServerTests-Prefix.pch"; sourceTree = "<group>"; };
+		DA1AD35F133DA58D00E6A9E1 /* Couchbase_ServerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Couchbase_ServerTests.h; sourceTree = "<group>"; };
+		DA1AD361133DA58D00E6A9E1 /* Couchbase_ServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Couchbase_ServerTests.m; sourceTree = "<group>"; };
+		DA3C66F7136BA6BC007C835A /* couchx.ini */ = {isa = PBXFileReference; lastKnownFileType = text; path = couchx.ini; sourceTree = "<group>"; };
+		DA45A4381384EF0300DF68ED /* Couchbase-Status-bw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status-bw.png"; sourceTree = "<group>"; };
+		DA638E2313E1F7BA005E6A5B /* Couchbase Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Couchbase Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA638E3613E1F99D005E6A5B /* install-couchbase.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "install-couchbase.sh"; sourceTree = "<group>"; };
+		DA638E3713E1FA08005E6A5B /* start-couchbase.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = "start-couchbase.sh"; sourceTree = "<group>"; };
+		DAADFAF8133DA61700B282D6 /* Couchbase-Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Couchbase-Status.png"; sourceTree = "<group>"; };
+		DAADFAF9133DA61700B282D6 /* Couchbase.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Couchbase.icns; sourceTree = "<group>"; };
+		DAADFAFA133DA61700B282D6 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		DAADFAFB133DA61700B282D6 /* ensure_full_commit.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = ensure_full_commit.sh; sourceTree = "<group>"; };
+		DAADFB00133DA61700B282D6 /* MainMenu.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = MainMenu.nib; sourceTree = "<group>"; };
+		DAADFB0B133DA68B00B282D6 /* LoginItemManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginItemManager.h; sourceTree = "<group>"; };
+		DAADFB0C133DA68B00B282D6 /* LoginItemManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginItemManager.m; sourceTree = "<group>"; };
+		DAADFB0D133DA68B00B282D6 /* ImportableDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportableDatabase.h; sourceTree = "<group>"; };
+		DAADFB0E133DA68B00B282D6 /* ImportableDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportableDatabase.m; sourceTree = "<group>"; };
+		DAADFB0F133DA68B00B282D6 /* ImportController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImportController.h; sourceTree = "<group>"; };
+		DAADFB10133DA68B00B282D6 /* ImportController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImportController.m; sourceTree = "<group>"; };
+		DAADFB17133DA6CE00B282D6 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		DAADFB1D133DA75F00B282D6 /* bin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bin; path = ../../build/bin; sourceTree = "<group>"; };
+		DAADFB1E133DA75F00B282D6 /* env.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; name = env.sh; path = ../../build/env.sh; sourceTree = "<group>"; };
+		DAADFB1F133DA75F00B282D6 /* etc */ = {isa = PBXFileReference; lastKnownFileType = folder; name = etc; path = ../../build/etc; sourceTree = "<group>"; };
+		DAADFB20133DA75F00B282D6 /* include */ = {isa = PBXFileReference; lastKnownFileType = folder; name = include; path = ../../build/include; sourceTree = "<group>"; };
+		DAADFB21133DA75F00B282D6 /* info */ = {isa = PBXFileReference; lastKnownFileType = folder; name = info; path = ../../build/info; sourceTree = "<group>"; };
+		DAADFB22133DA75F00B282D6 /* lib */ = {isa = PBXFileReference; lastKnownFileType = folder; name = lib; path = ../../build/lib; sourceTree = "<group>"; };
+		DAADFB23133DA75F00B282D6 /* Library */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Library; path = ../../build/Library; sourceTree = "<group>"; };
+		DAADFB24133DA75F00B282D6 /* man */ = {isa = PBXFileReference; lastKnownFileType = folder; name = man; path = ../../build/man; sourceTree = "<group>"; };
+		DAADFB25133DA75F00B282D6 /* sbin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = sbin; path = ../../build/sbin; sourceTree = "<group>"; };
+		DAADFB26133DA75F00B282D6 /* share */ = {isa = PBXFileReference; lastKnownFileType = folder; name = share; path = ../../build/share; sourceTree = "<group>"; };
+		DAADFB27133DA75F00B282D6 /* var */ = {isa = PBXFileReference; lastKnownFileType = folder; name = var; path = ../../build/var; sourceTree = "<group>"; };
+		DAADFB37133DA84400B282D6 /* erl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = erl; sourceTree = "<group>"; };
+		DAADFB38133DA84400B282D6 /* fix-paths.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "fix-paths.sh"; sourceTree = "<group>"; };
+		DAAEC781133DBD0700EE9189 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = SOURCE_ROOT; };
+		E802C02414FEDB9500A54EC8 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE.txt; path = makedmg/LICENSE.txt; sourceTree = SOURCE_ROOT; };
+		E802C02614FEDBDB00A54EC8 /* dmg-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dmg-background.png"; path = "makedmg/dmg-background.png"; sourceTree = SOURCE_ROOT; };
+		E802C02714FEDBDB00A54EC8 /* makedmg.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = makedmg.sh; path = makedmg/makedmg.sh; sourceTree = SOURCE_ROOT; };
+		E802C02814FEDBDB00A54EC8 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = README.txt; path = makedmg/README.txt; sourceTree = SOURCE_ROOT; };
+		E802C02914FEDBDB00A54EC8 /* setviewoptions.applescript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.applescript; name = setviewoptions.applescript; path = makedmg/setviewoptions.applescript; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA1AD330133DA58D00E6A9E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1AD338133DA58D00E6A9E1 /* Cocoa.framework in Frameworks */,
+				DAADFB18133DA6CE00B282D6 /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1AD350133DA58D00E6A9E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1AD355133DA58D00E6A9E1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA638E0013E1F7BA005E6A5B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2725AAEF158A93CF00CCC0B9 /* Security.framework in Frameworks */,
+				DA638E0113E1F7BA005E6A5B /* Cocoa.framework in Frameworks */,
+				DA638E0213E1F7BA005E6A5B /* Sparkle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA1AD328133DA58D00E6A9E1 = {
+			isa = PBXGroup;
+			children = (
+				DAADFB33133DA77500B282D6 /* CouchDB Files */,
+				DA1AD33D133DA58D00E6A9E1 /* Couchbase Server */,
+				DA1AD358133DA58D00E6A9E1 /* Couchbase ServerTests */,
+				DA1AD336133DA58D00E6A9E1 /* Frameworks */,
+				DA1AD334133DA58D00E6A9E1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA1AD334133DA58D00E6A9E1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA1AD333133DA58D00E6A9E1 /* Couchbase Single Server.app */,
+				DA1AD354133DA58D00E6A9E1 /* Couchbase ServerTests.octest */,
+				DA638E2313E1F7BA005E6A5B /* Couchbase Server.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA1AD336133DA58D00E6A9E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA1AD337133DA58D00E6A9E1 /* Cocoa.framework */,
+				2725AAEE158A93CF00CCC0B9 /* Security.framework */,
+				DA1AD339133DA58D00E6A9E1 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DA1AD339133DA58D00E6A9E1 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAADFB17133DA6CE00B282D6 /* Sparkle.framework */,
+				DA1AD33A133DA58D00E6A9E1 /* AppKit.framework */,
+				DA1AD33B133DA58D00E6A9E1 /* CoreData.framework */,
+				DA1AD33C133DA58D00E6A9E1 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DA1AD33D133DA58D00E6A9E1 /* Couchbase Server */ = {
+			isa = PBXGroup;
+			children = (
+				DAADFB0B133DA68B00B282D6 /* LoginItemManager.h */,
+				DAADFB0C133DA68B00B282D6 /* LoginItemManager.m */,
+				DAADFB0D133DA68B00B282D6 /* ImportableDatabase.h */,
+				DAADFB0E133DA68B00B282D6 /* ImportableDatabase.m */,
+				DAADFB0F133DA68B00B282D6 /* ImportController.h */,
+				DAADFB10133DA68B00B282D6 /* ImportController.m */,
+				DA1AD349133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.h */,
+				DA1AD34A133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.m */,
+				2725AADB158A46E800CCC0B9 /* ToolInstallController.h */,
+				2725AADC158A46E800CCC0B9 /* ToolInstallController.m */,
+				2725AAE6158A84BC00CCC0B9 /* PrivilegedInstall.h */,
+				2725AAE7158A84BC00CCC0B9 /* PrivilegedInstall.m */,
+				DA1AD33E133DA58D00E6A9E1 /* Supporting Files */,
+			);
+			path = "Couchbase Server";
+			sourceTree = "<group>";
+		};
+		DA1AD33E133DA58D00E6A9E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E802C02614FEDBDB00A54EC8 /* dmg-background.png */,
+				E802C02714FEDBDB00A54EC8 /* makedmg.sh */,
+				E802C02814FEDBDB00A54EC8 /* README.txt */,
+				27F00DEE15B5CFB8008CDA68 /* README_for_zip.txt */,
+				E802C02914FEDBDB00A54EC8 /* setviewoptions.applescript */,
+				E802C02414FEDB9500A54EC8 /* LICENSE.txt */,
+				DA0E692013DD364400CDAC6D /* dictionary.c */,
+				DA0E692113DD364400CDAC6D /* dictionary.h */,
+				DA0E692213DD364400CDAC6D /* iniparser.c */,
+				DA638E3713E1FA08005E6A5B /* start-couchbase.sh */,
+				DA0E692313DD364400CDAC6D /* iniparser.h */,
+				DA3C66F7136BA6BC007C835A /* couchx.ini */,
+				DA638E3613E1F99D005E6A5B /* install-couchbase.sh */,
+				27A22360155B2EEC0076D8BC /* install_libraries.rb */,
+				DAAEC781133DBD0700EE9189 /* dsa_pub.pem */,
+				DAADFB37133DA84400B282D6 /* erl */,
+				DAADFB38133DA84400B282D6 /* fix-paths.sh */,
+				0F18A8721936BB3800585D2A /* Importer.xib */,
+				2725AADD158A46E800CCC0B9 /* ToolInstallController.xib */,
+				DAADFAF8133DA61700B282D6 /* Couchbase-Status.png */,
+				DA45A4381384EF0300DF68ED /* Couchbase-Status-bw.png */,
+				DAADFAF9133DA61700B282D6 /* Couchbase.icns */,
+				DAADFAFA133DA61700B282D6 /* Credits.html */,
+				DAADFAFB133DA61700B282D6 /* ensure_full_commit.sh */,
+				DAADFB00133DA61700B282D6 /* MainMenu.nib */,
+				DA1AD33F133DA58D00E6A9E1 /* Couchbase Server-Info.plist */,
+				DA1AD340133DA58D00E6A9E1 /* InfoPlist.strings */,
+				DA1AD343133DA58D00E6A9E1 /* Couchbase Server-Prefix.pch */,
+				DA1AD344133DA58D00E6A9E1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DA1AD358133DA58D00E6A9E1 /* Couchbase ServerTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA1AD35F133DA58D00E6A9E1 /* Couchbase_ServerTests.h */,
+				DA1AD361133DA58D00E6A9E1 /* Couchbase_ServerTests.m */,
+				DA1AD359133DA58D00E6A9E1 /* Supporting Files */,
+			);
+			path = "Couchbase ServerTests";
+			sourceTree = "<group>";
+		};
+		DA1AD359133DA58D00E6A9E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DA1AD35A133DA58D00E6A9E1 /* Couchbase ServerTests-Info.plist */,
+				DA1AD35B133DA58D00E6A9E1 /* InfoPlist.strings */,
+				DA1AD35E133DA58D00E6A9E1 /* Couchbase ServerTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DAADFB33133DA77500B282D6 /* CouchDB Files */ = {
+			isa = PBXGroup;
+			children = (
+				DAADFB1D133DA75F00B282D6 /* bin */,
+				DAADFB1E133DA75F00B282D6 /* env.sh */,
+				DAADFB1F133DA75F00B282D6 /* etc */,
+				DAADFB20133DA75F00B282D6 /* include */,
+				DAADFB21133DA75F00B282D6 /* info */,
+				DAADFB22133DA75F00B282D6 /* lib */,
+				DAADFB23133DA75F00B282D6 /* Library */,
+				DAADFB24133DA75F00B282D6 /* man */,
+				DAADFB25133DA75F00B282D6 /* sbin */,
+				DAADFB26133DA75F00B282D6 /* share */,
+				DAADFB27133DA75F00B282D6 /* var */,
+			);
+			name = "CouchDB Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA1AD332133DA58D00E6A9E1 /* Couchbase Single Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA1AD365133DA58D00E6A9E1 /* Build configuration list for PBXNativeTarget "Couchbase Single Server" */;
+			buildPhases = (
+				DA1AD32F133DA58D00E6A9E1 /* Sources */,
+				DA1AD330133DA58D00E6A9E1 /* Frameworks */,
+				DA1AD331133DA58D00E6A9E1 /* Resources */,
+				DAADFB1A133DA70E00B282D6 /* Install Sparkle */,
+				DAADFB1C133DA72C00B282D6 /* Install Core */,
+				DAADFB34133DA78D00B282D6 /* Fixup Paths */,
+				DAADFB36133DA7E800B282D6 /* Install Proper erl start thing */,
+				DA3C66F9136BA714007C835A /* Enable Native Query Server */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Couchbase Single Server";
+			productName = "Couchbase Server";
+			productReference = DA1AD333133DA58D00E6A9E1 /* Couchbase Single Server.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA1AD353133DA58D00E6A9E1 /* Couchbase ServerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA1AD368133DA58D00E6A9E1 /* Build configuration list for PBXNativeTarget "Couchbase ServerTests" */;
+			buildPhases = (
+				DA1AD34F133DA58D00E6A9E1 /* Sources */,
+				DA1AD350133DA58D00E6A9E1 /* Frameworks */,
+				DA1AD351133DA58D00E6A9E1 /* Resources */,
+				DA1AD352133DA58D00E6A9E1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA1AD357133DA58D00E6A9E1 /* PBXTargetDependency */,
+			);
+			name = "Couchbase ServerTests";
+			productName = "Couchbase ServerTests";
+			productReference = DA1AD354133DA58D00E6A9E1 /* Couchbase ServerTests.octest */;
+			productType = "com.apple.product-type.bundle.ocunit-test";
+		};
+		DA638DF613E1F7BA005E6A5B /* Couchbase Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA638E2013E1F7BA005E6A5B /* Build configuration list for PBXNativeTarget "Couchbase Server" */;
+			buildPhases = (
+				DA638DF713E1F7BA005E6A5B /* Sources */,
+				DA638E0013E1F7BA005E6A5B /* Frameworks */,
+				DA638E0313E1F7BA005E6A5B /* Resources */,
+				DA638E0D13E1F7BA005E6A5B /* Install Sparkle */,
+				DA638E4113E1FF1E005E6A5B /* Install Erlang */,
+				DA638E1B13E1F7BA005E6A5B /* Install Core */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Couchbase Server";
+			productName = "Couchbase Server";
+			productReference = DA638E2313E1F7BA005E6A5B /* Couchbase Server.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA1AD32A133DA58D00E6A9E1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = NorthScale;
+			};
+			buildConfigurationList = DA1AD32D133DA58D00E6A9E1 /* Build configuration list for PBXProject "Couchbase Server" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DA1AD328133DA58D00E6A9E1;
+			productRefGroup = DA1AD334133DA58D00E6A9E1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DAE21573133DB9C2006D63D2 /* Couchbase Single Server Zip */,
+				DA1AD332133DA58D00E6A9E1 /* Couchbase Single Server */,
+				DA1AD353133DA58D00E6A9E1 /* Couchbase ServerTests */,
+				DA638E2513E1F7C9005E6A5B /* Couchbase Server Zip */,
+				DA638DF613E1F7BA005E6A5B /* Couchbase Server */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA1AD331133DA58D00E6A9E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1AD342133DA58D00E6A9E1 /* InfoPlist.strings in Resources */,
+				DAADFB02133DA61700B282D6 /* Couchbase-Status.png in Resources */,
+				DAADFB03133DA61700B282D6 /* Couchbase.icns in Resources */,
+				DAADFB04133DA61700B282D6 /* Credits.html in Resources */,
+				DAAEC783133DBD1E00EE9189 /* dsa_pub.pem in Resources */,
+				DAADFB05133DA61700B282D6 /* ensure_full_commit.sh in Resources */,
+				0F18A8731936BB3800585D2A /* Importer.xib in Resources */,
+				DAADFB0A133DA61700B282D6 /* MainMenu.nib in Resources */,
+				DA45A4391384EF0300DF68ED /* Couchbase-Status-bw.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1AD351133DA58D00E6A9E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1AD35D133DA58D00E6A9E1 /* InfoPlist.strings in Resources */,
+				DA1AD360133DA58D00E6A9E1 /* Couchbase_ServerTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA638E0313E1F7BA005E6A5B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E802C02A14FEDCD100A54EC8 /* LICENSE.txt in Resources */,
+				DA638E0413E1F7BA005E6A5B /* InfoPlist.strings in Resources */,
+				DA638E0613E1F7BA005E6A5B /* Couchbase-Status.png in Resources */,
+				DA638E0713E1F7BA005E6A5B /* Couchbase.icns in Resources */,
+				DA638E0813E1F7BA005E6A5B /* Credits.html in Resources */,
+				DA638E0913E1F7BA005E6A5B /* dsa_pub.pem in Resources */,
+				DA638E0A13E1F7BA005E6A5B /* ensure_full_commit.sh in Resources */,
+				DA638E0B13E1F7BA005E6A5B /* MainMenu.nib in Resources */,
+				DA638E0C13E1F7BA005E6A5B /* Couchbase-Status-bw.png in Resources */,
+				2725AADF158A46E800CCC0B9 /* ToolInstallController.xib in Resources */,
+				0F18A8741936BB3800585D2A /* Importer.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DA1AD352133DA58D00E6A9E1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		DA638E1B13E1F7BA005E6A5B /* Install Core */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Couchbase Server/install-couchbase.sh",
+			);
+			name = "Install Core";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nexec \"$SCRIPT_INPUT_FILE_0\"";
+			showEnvVarsInLog = 0;
+		};
+		DA638E2813E1F7C9005E6A5B /* Zip it up */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Zip it up";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh -e";
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR\"\nV=$(/usr/libexec/PlistBuddy \"Couchbase Server.app/Contents/Info.plist\" -c 'Print CFBundleVersion')\ncp \"$SRCROOT/makedmg/README_for_zip.txt\" \"README.txt\"\nrm -f \"Couchbase Server-$V.zip\"\nzip -r --symlinks --quiet -9 \"Couchbase Server-$V.zip\" \"Couchbase Server.app\" \"README.txt\"";
+			showEnvVarsInLog = 0;
+		};
+		DA638E4113E1FF1E005E6A5B /* Install Erlang */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install Erlang";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n# If Erlang already exists in the built Couchbase dir, skip this step\ntest -f \"$PROJECT_DIR/../install/bin/erl\" && exit 0\n\nVER=\"R14B03-OSX-10.6.8\"\nFN=\"erlang-$VER.tgz\"\nURL=\"http://downloads.northscale.com/builddeps/$FN\"\n\ndest=\"$BUILT_PRODUCTS_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/couchbase-core\"\nrm -rf \"$dest\"\nmkdir -p \"$dest\"\n\ntest -f \"$FN\" || curl -sfO \"$URL\"\n\ncd \"$dest\"\ngzip -dc \"$PROJECT_DIR/$FN\" | tar xf -\necho \"Installed erlang $VER into $dest\"";
+			showEnvVarsInLog = 0;
+		};
+		DAADFB34133DA78D00B282D6 /* Fixup Paths */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Couchbase Server/fix-paths.sh",
+			);
+			name = "Fixup Paths";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exec \"$SCRIPT_INPUT_FILE_0\"";
+		};
+		DAE2157A133DBA20006D63D2 /* Zip it up */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Zip it up";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$BUILT_PRODUCTS_DIR\"\nV=$(/usr/libexec/PlistBuddy \"$PROJECT_NAME.app/Contents/Info.plist\" -c 'Print CFBundleVersion')\nditto -ck --keepParent \"$PROJECT_NAME.app\" \"$PROJECT_NAME-$V.zip\"";
+		};
+		E867F93014A8CD0800F64EC8 /* Create a dmg */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Create a dmg";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = "/bin/sh -e";
+			shellScript = "exit 0 # DISABLED DMG CREATION -- REMOVE THIS LINE TO RE-ENABLE\n\ncd \"$BUILT_PRODUCTS_DIR\"\nV=$(/usr/libexec/PlistBuddy \"Couchbase Server.app/Contents/Info.plist\" -c 'Print CFBundleVersion')\ncp -rf \"$PROJECT_DIR\"/makedmg/* .\ncp -f \"$PROJECT_DIR/Couchbase Server/Couchbase.icns\" .\n./makedmg.sh \"$PROJECT_NAME-$V.dmg\" \"Couchbase Server.app\" \"Couchbase Server\" dmg-background.png Couchbase.icns";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA1AD32F133DA58D00E6A9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1AD345133DA58D00E6A9E1 /* main.m in Sources */,
+				DA1AD34B133DA58D00E6A9E1 /* Couchbase_ServerAppDelegate.m in Sources */,
+				DAADFB13133DA68B00B282D6 /* LoginItemManager.m in Sources */,
+				DAADFB14133DA68B00B282D6 /* ImportableDatabase.m in Sources */,
+				DAADFB15133DA68B00B282D6 /* ImportController.m in Sources */,
+				DA0E692413DD364400CDAC6D /* dictionary.c in Sources */,
+				DA0E692513DD364400CDAC6D /* iniparser.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA1AD34F133DA58D00E6A9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA1AD362133DA58D00E6A9E1 /* Couchbase_ServerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA638DF713E1F7BA005E6A5B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA638DF813E1F7BA005E6A5B /* main.m in Sources */,
+				DA638DF913E1F7BA005E6A5B /* Couchbase_ServerAppDelegate.m in Sources */,
+				DA638DFA13E1F7BA005E6A5B /* LoginItemManager.m in Sources */,
+				DA638DFB13E1F7BA005E6A5B /* ImportableDatabase.m in Sources */,
+				DA638DFC13E1F7BA005E6A5B /* ImportController.m in Sources */,
+				DA638DFE13E1F7BA005E6A5B /* dictionary.c in Sources */,
+				DA638DFF13E1F7BA005E6A5B /* iniparser.c in Sources */,
+				2725AADE158A46E800CCC0B9 /* ToolInstallController.m in Sources */,
+				2725AAE8158A84BD00CCC0B9 /* PrivilegedInstall.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA1AD357133DA58D00E6A9E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA1AD332133DA58D00E6A9E1 /* Couchbase Single Server */;
+			targetProxy = DA1AD356133DA58D00E6A9E1 /* PBXContainerItemProxy */;
+		};
+		DA638E2D13E1F810005E6A5B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA638DF613E1F7BA005E6A5B /* Couchbase Server */;
+			targetProxy = DA638E2C13E1F810005E6A5B /* PBXContainerItemProxy */;
+		};
+		DAE21579133DB9C8006D63D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA1AD332133DA58D00E6A9E1 /* Couchbase Single Server */;
+			targetProxy = DAE21578133DB9C8006D63D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA1AD340133DA58D00E6A9E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA1AD341133DA58D00E6A9E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DA1AD35B133DA58D00E6A9E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA1AD35C133DA58D00E6A9E1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA1AD363133DA58D00E6A9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Debug;
+		};
+		DA1AD364133DA58D00E6A9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				SDKROOT = macosx;
+				WARNING_CFLAGS = "-Wall";
+			};
+			name = Release;
+		};
+		DA1AD366133DA58D00E6A9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Couchbase Server/Couchbase Server-Prefix.pch";
+				INFOPLIST_FILE = "Couchbase Server/Couchbase Server-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA1AD367133DA58D00E6A9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Couchbase Server/Couchbase Server-Prefix.pch";
+				INFOPLIST_FILE = "Couchbase Server/Couchbase Server-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DA1AD369133DA58D00E6A9E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Couchbase Server.app/Contents/MacOS/Couchbase Server";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Couchbase ServerTests/Couchbase ServerTests-Prefix.pch";
+				INFOPLIST_FILE = "Couchbase ServerTests/Couchbase ServerTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DA1AD36A133DA58D00E6A9E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Couchbase Server.app/Contents/MacOS/Couchbase Server";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Couchbase ServerTests/Couchbase ServerTests-Prefix.pch";
+				INFOPLIST_FILE = "Couchbase ServerTests/Couchbase ServerTests-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+					"-headerpad_max_install_names",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		DA638E2113E1F7BA005E6A5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Couchbase Server/Couchbase Server-Prefix.pch";
+				INFOPLIST_FILE = "Couchbase Server/Couchbase Server-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "Couchbase Server";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DA638E2213E1F7BA005E6A5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Couchbase Server/Couchbase Server-Prefix.pch";
+				INFOPLIST_FILE = "Couchbase Server/Couchbase Server-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				PRODUCT_NAME = "Couchbase Server";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DA638E2A13E1F7C9005E6A5B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "Couchbase Single Server Zip copy";
+			};
+			name = Debug;
+		};
+		DA638E2B13E1F7C9005E6A5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "Couchbase Single Server Zip copy";
+			};
+			name = Release;
+		};
+		DAE21574133DB9C2006D63D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DAE21575133DB9C2006D63D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = i386;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA1AD32D133DA58D00E6A9E1 /* Build configuration list for PBXProject "Couchbase Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1AD363133DA58D00E6A9E1 /* Debug */,
+				DA1AD364133DA58D00E6A9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA1AD365133DA58D00E6A9E1 /* Build configuration list for PBXNativeTarget "Couchbase Single Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1AD366133DA58D00E6A9E1 /* Debug */,
+				DA1AD367133DA58D00E6A9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA1AD368133DA58D00E6A9E1 /* Build configuration list for PBXNativeTarget "Couchbase ServerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA1AD369133DA58D00E6A9E1 /* Debug */,
+				DA1AD36A133DA58D00E6A9E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA638E2013E1F7BA005E6A5B /* Build configuration list for PBXNativeTarget "Couchbase Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA638E2113E1F7BA005E6A5B /* Debug */,
+				DA638E2213E1F7BA005E6A5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA638E2913E1F7C9005E6A5B /* Build configuration list for PBXAggregateTarget "Couchbase Server Zip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA638E2A13E1F7C9005E6A5B /* Debug */,
+				DA638E2B13E1F7C9005E6A5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DAE21576133DB9C3006D63D2 /* Build configuration list for PBXAggregateTarget "Couchbase Single Server Zip" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAE21574133DB9C2006D63D2 /* Debug */,
+				DAE21575133DB9C2006D63D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA1AD32A133DA58D00E6A9E1 /* Project object */;
+}

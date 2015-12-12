@@ -1,0 +1,12 @@
+# Keep the entries sorted to reduce the risk for a merge conflict
+*.pyc
+*.tar.gz
+*~
+/CMakeFiles/
+/CTestTestfile.cmake
+/Makefile
+/Makefile.in
+/TAGS
+/cmake_install.cmake
+/tags
+/wrapper/cbdocloader

@@ -1,0 +1,11 @@
+*~
+*.pyc
+.pydevproject
+reports/*.html
+reports/*.txt
+reports/*.json
+/Makefile
+/wrapper/cbhealthchecker
+/CMakeFiles/
+/CTestTestfile.cmake
+/cmake_install.cmake
