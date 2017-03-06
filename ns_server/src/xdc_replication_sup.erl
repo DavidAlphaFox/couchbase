@@ -26,7 +26,7 @@ start_link() ->
     ?xdcr_info("start XDCR bucket replicator supervisor..."),
     ets:delete_all_objects(xdcr_stats),
     supervisor:start_link({local,?MODULE}, ?MODULE, []).
-
+%% 启动一个复制进程
 start_replication(#rep{id = Id, source = SourceBucket} = Rep) ->
     Spec = {{SourceBucket, Id},
              {xdc_replication, start_link, [Rep]},
@@ -38,7 +38,8 @@ start_replication(#rep{id = Id, source = SourceBucket} = Rep) ->
     ?xdcr_info("start bucket replicator using spec: ~p.", [Spec]),
     xdc_rep_utils:init_replication_stats(Id),
     supervisor:start_child(?MODULE, Spec).
-
+%% 遍历supervisor的子进程
+%% 就可以得到所有的复制
 -spec get_replications() -> [{Bucket :: binary(), Id :: binary(), pid()}].
 get_replications() ->
     [{Bucket, Id, Pid}

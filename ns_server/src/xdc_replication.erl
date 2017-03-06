@@ -105,9 +105,11 @@ init([#rep{source = SrcBucketBinary, replication_mode = RepMode, options = Optio
                                 (_, Acc) ->
                                     Acc
                             end,
+		%% 使用pubsub来监听事件
+		%% 收到事件后直接转发给当前进程
     ns_pubsub:subscribe_link(ns_config_events, NsConfigEventsHandler, []),
     ?xdcr_debug("ns config event handler subscribed", []),
-
+		%% 最大并行复制的数据量
     MaxConcurrentReps = options_to_num_tokens(Options),
     MaxInitReps = erlang:max(MaxConcurrentReps, 1),
     {ok, InitThrottle} = new_concurrency_throttle:start_link({MaxInitReps, ?XDCR_INIT_CONCUR_THROTTLE}, self()),
