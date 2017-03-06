@@ -120,7 +120,10 @@ do_subscribe_link(Name, Fun, State, Parent) ->
                                    #state{func=Fun, func_state=State}),
 
     proc_lib:init_ack(Parent, self()),
-
+		%% 此处会block，不是匿名函数块
+		%% 是会立刻就执行的
+		%% 但是消息会一直等待，gen_event不会把消息发送到这里面
+		%% 只有控制进程会发消息过来
     ExitReason =
         receive
             unsubscribe ->
